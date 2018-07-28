@@ -9,21 +9,28 @@ import anime from 'animejs'
 class Game extends Component {
 
   state = {
-    obstacles: []
+    obstacles: [],
+    bind: false
   };
 
   componentDidMount() {
     this.buddhaBaby = document.getElementById('buddha-baby');
     window.addEventListener('keydown', this.keyPressHandler);
     this.insertObstacles = window.setInterval(this.addObstacle, 1000);
+    this.positionInterval = window.setInterval(this.sendPosition, 5);
   };
 
   componentWillUnmount() {
     window.clearInterval(this.insertObstacles);
+    window.clearInterval(this.positionInterval);
   }
 
   buddhaBaby = '';
   i = 0;
+
+  sendPosition = () => {
+    this.props.dispatch( updateBuddhaPosition( this.getBuddhaBabyPosition() ) );
+  };
 
   removeMe = (id) => {
     let item = this.state.obstacles.find(ele => {
@@ -49,8 +56,7 @@ class Game extends Component {
   };
 
   jump = () => {
-    const yPos = this.getBuddhaBabyPosition().y * .1;
-    let anim = anime({
+    anime({
       targets: this.buddhaBaby,
       translateY: {
         value: '-=150',
@@ -58,12 +64,16 @@ class Game extends Component {
         easing: 'easeInOutSine'
       },
       direction: 'alternate',
-      loop: 1
+      loop: 1,
+      complete: () => this.setState({ bind: false })
     });
   };
 
   keyPressHandler = (e) => {
-    if (e.keyCode === 32){
+    if (e.keyCode === 32 && this.state.bind !== true){
+      this.setState({
+        bind: true
+      });
       this.jump();
     };
   };
