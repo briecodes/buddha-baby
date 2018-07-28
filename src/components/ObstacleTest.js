@@ -3,11 +3,18 @@ import { connect } from 'react-redux';
 import anime from 'animejs'
 
 class ObstacleTest extends Component {
+  state = {
+    position: null
+  }
   componentDidMount() {
-    this.obstacle = document.getElementById(this.props.id);
-    this.objectMotion = window.setInterval(this.determineLocation, 0);
+    this.obstacle = document.getElementById(this.props.id.replace(/-/g, ""));
+    this.objectMotion = window.setInterval(this.determineLocation, 50);
+    this.setState({
+      position: Math.floor(this.getObstaclePosition().left)
+    });
+    // this.moove();
     anime({
-      targets: `#${this.props.id}`,
+      targets: `#${this.props.id.replace(/-/g, "")}`,
       left: -(this.getObjectWidth() * 2),
       duration: 2000,
       easing: 'easeInOutQuad'
@@ -16,6 +23,15 @@ class ObstacleTest extends Component {
 
   obstacle = '';
   objectMotion = '';
+
+  moove = () => {
+    anime({
+      targets: `#${this.props.id.replace(/-/g, "")}`,
+      left: -(this.getObjectWidth() * 2),
+      duration: 2000,
+      easing: 'easeInOutQuad'
+    });
+  }
 
   getObjectWidth = () => {
     return this.obstacle.getBoundingClientRect().right - this.obstacle.getBoundingClientRect().left;
@@ -30,17 +46,22 @@ class ObstacleTest extends Component {
   };
 
   determineLocation = () => {
-    if (this.getObstaclePosition().left < 0){
+    console.log('location', Math.floor(this.getObstaclePosition().left));
+    if (Math.floor(this.getObstaclePosition().left) < 10) {
+      console.log('no problem', this.props.id.replace(/-/g, ""));
       window.clearInterval(this.objectMotion);
-      this.obstacle.remove();
-      this.props.removeMe(this.props.id);
-    };
+      // this.obstacle.remove();
+      this.props.removeMe(this.props.id.replace(/-/g, ""));
+    }else if (this.state.position === Math.floor(this.getObstaclePosition().left)){
+      console.log('the same position!', this.props.id.replace(/-/g, ""));
+      window.clearInterval(this.objectMotion);
+      this.props.removeMe(this.props.id.replace(/-/g, ""));
+    }
   };
 
   render() {
-    console.log('id:', this.props.id);
     return (
-      <div id={this.props.id} className='obstacle'>{this.props.id}</div>
+      <div id={this.props.id.replace(/-/g, "")} className='obstacle'>{this.props.id.replace(/-/g, "")}</div>
     );
   };
 };

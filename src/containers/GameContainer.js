@@ -23,17 +23,20 @@ class Game extends Component {
   buddhaBaby = '';
 
   removeMe = (id) => {
-    let index = this.state.obstacles.indexOf(id);
-    console.log('index:', index);
+    let item = this.state.obstacles.find(ele => {
+      return ele.props.id === id;
+    });
+    let index = this.state.obstacles.indexOf(item);
     if (index > -1) {
       this.setState({
         obstacles: [...this.state.obstacles.splice(index, 1)]
       });
     };
+    // console.log('removing... state:', this.state.obstacles);
   };
 
   addObstacle = () => {
-    console.log('adding obstacle');
+    // console.log('adding obstacle');
     this.setState({
       obstacles: [...this.state.obstacles, <ObstacleTest key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
     });
