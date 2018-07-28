@@ -4,7 +4,6 @@ import StartScreen from '../components/StartScreen';
 
 class App extends Component {
   render() {
-    console.log(this.props.gameStart);
     return (
       <div id='container'>
         <div id='vertical-center'>

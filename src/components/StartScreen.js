@@ -12,7 +12,7 @@ class StartScreen extends React.Component {
     return (
       <React.Fragment>
         <span className='text-button' onClick={this.start}>Start Game</span>
-        <span className='text-button' onClick={this.displayInstructions}>Instructions</span>
+        <span className='text-button' onClick={this.toggleInstructions}>Instructions</span>
       </React.Fragment>
     );
   };
@@ -21,17 +21,16 @@ class StartScreen extends React.Component {
     return (
       <div>
         Instructions!
-        <span className='text-button' onClick={this.displayInstructions}>Close</span>
+        <span className='text-button' onClick={this.toggleInstructions}>Close</span>
       </div>
     );
   };
 
   start = () => {
-    console.log('start clicked');
     this.props.dispatch(startGame());
   };
 
-  displayInstructions = () => {
+  toggleInstructions = () => {
     this.setState({
       displayInstructions: !this.state.displayInstructions
     });
