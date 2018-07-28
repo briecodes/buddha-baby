@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import anime from 'animejs'
 
 class ObstacleTest extends Component {
   componentDidMount() {
-    this.obstacle = document.getElementById('one');
-    this.objectMotion = window.setInterval(this.determineLocation, 500);
-    this.moveObject();
+    this.obstacle = document.getElementById(this.props.id);
+    this.objectMotion = window.setInterval(this.determineLocation, 0);
+    anime({
+      targets: `#${this.props.id}`,
+      left: -(this.getObjectWidth() * 2),
+      duration: 2000,
+      easing: 'easeInOutQuad'
+    });
   };
 
   obstacle = '';
   objectMotion = '';
 
-  moveObject = () => {
-    let left = this.getObstaclePosition().left;
-    this.obstacle.style.left = left -= 1;
-    window.requestAnimationFrame(this.moveObject);
-  };
+  getObjectWidth = () => {
+    return this.obstacle.getBoundingClientRect().right - this.obstacle.getBoundingClientRect().left;
+  }
 
   getObstaclePosition = () => {
     let obstaclePosition = this.obstacle.getBoundingClientRect();
@@ -29,12 +33,14 @@ class ObstacleTest extends Component {
     if (this.getObstaclePosition().left < 0){
       window.clearInterval(this.objectMotion);
       this.obstacle.remove();
+      this.props.removeMe(this.props.id);
     };
   };
 
   render() {
+    console.log('id:', this.props.id);
     return (
-      <div id='one' className='obstacle'></div>
+      <div id={this.props.id} className='obstacle'>{this.props.id}</div>
     );
   };
 };

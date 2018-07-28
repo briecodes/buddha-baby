@@ -1,16 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
 
 class Game extends Component {
 
-  componentDidMount() {
-    this.buddhaBaby = document.getElementById('buddha-baby');
-    window.addEventListener('keydown', this.keyPressHandler)
+  state = {
+    obstacles: []
   };
 
+  componentDidMount() {
+    this.buddhaBaby = document.getElementById('buddha-baby');
+    window.addEventListener('keydown', this.keyPressHandler);
+    this.insertObstacles = window.setInterval(this.addObstacle, 1000);
+  };
+
+  componentWillUnmount() {
+    window.clearInterval(this.insertObstacles);
+  }
+
   buddhaBaby = '';
+
+  removeMe = (id) => {
+    let index = this.state.obstacles.indexOf(id);
+    console.log('index:', index);
+    if (index > -1) {
+      this.setState({
+        obstacles: [...this.state.obstacles.splice(index, 1)]
+      });
+    };
+  };
+
+  addObstacle = () => {
+    console.log('adding obstacle');
+    this.setState({
+      obstacles: [...this.state.obstacles, <ObstacleTest key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
+    });
+    console.log('total:', this.state.obstacles.length);
+  };
 
   getBuddhaBabyPosition = () => {
     let buddhaBabyPosition = this.buddhaBaby.getBoundingClientRect();
@@ -27,7 +55,7 @@ class Game extends Component {
     return (
       <div id='game-container'>
         <div id='buddha-baby'></div>
-        <ObstacleTest />
+        {this.state.obstacles}
       </div>
     );
   };
