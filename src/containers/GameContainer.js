@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import ObstacleTest from '../components/ObstacleTest';
+
 class Game extends Component {
 
   componentDidMount() {
@@ -25,6 +27,7 @@ class Game extends Component {
     return (
       <div id='game-container'>
         <div id='buddha-baby'></div>
+        <ObstacleTest />
       </div>
     );
   };

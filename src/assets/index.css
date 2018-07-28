@@ -46,6 +46,15 @@ body {
   background: cyan;
 }
 
+.obstacle {
+  width: 4%;
+  height: 10%;
+  right: 4%;
+  bottom: 15%;
+  position: absolute;
+  background: yellow;
+}
+
 /* START SCREEN END */
 
 /* @keyframes App-logo-spin {
