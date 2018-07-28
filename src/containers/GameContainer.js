@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
+import { updateBuddhaPosition } from '../actions/index';
+import anime from 'animejs'
 
 class Game extends Component {
 
@@ -21,6 +23,7 @@ class Game extends Component {
   }
 
   buddhaBaby = '';
+  i = 0;
 
   removeMe = (id) => {
     let item = this.state.obstacles.find(ele => {
@@ -32,25 +35,36 @@ class Game extends Component {
         obstacles: [...this.state.obstacles.splice(index, 1)]
       });
     };
-    // console.log('removing... state:', this.state.obstacles);
   };
 
   addObstacle = () => {
-    // console.log('adding obstacle');
     this.setState({
       obstacles: [...this.state.obstacles, <ObstacleTest key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
     });
-    console.log('total:', this.state.obstacles.length);
   };
 
   getBuddhaBabyPosition = () => {
     let buddhaBabyPosition = this.buddhaBaby.getBoundingClientRect();
-    console.log('bb:', buddhaBabyPosition.top, buddhaBabyPosition.right, buddhaBabyPosition.bottom, buddhaBabyPosition.left);
+    return {left: Math.floor(buddhaBabyPosition.left), top: Math.floor(buddhaBabyPosition.top), right: Math.floor(buddhaBabyPosition.right), bottom: Math.floor(buddhaBabyPosition.bottom), y: Math.floor(buddhaBabyPosition.y), x: Math.floor(buddhaBabyPosition.x)}
+  };
+
+  jump = () => {
+    const yPos = this.getBuddhaBabyPosition().y * .1;
+    let anim = anime({
+      targets: this.buddhaBaby,
+      translateY: {
+        value: '-=150',
+        duration: 250,
+        easing: 'easeInOutSine'
+      },
+      direction: 'alternate',
+      loop: 1
+    });
   };
 
   keyPressHandler = (e) => {
     if (e.keyCode === 32){
-      this.getBuddhaBabyPosition();
+      this.jump();
     };
   };
 
