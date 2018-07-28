@@ -19,10 +19,11 @@ body {
 
 /* START SCREEN  */
 
-#start-container {
+#start-container, #game-container {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  position: relative;
   overflow: hidden;
   padding-bottom: 45%;
   text-align: center;
@@ -34,6 +35,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+}
+
+#buddha-baby {
+  width: 8%;
+  height: 15%;
+  left: 15%;
+  bottom: 15%;
+  position: absolute;
+  background: cyan;
 }
 
 /* START SCREEN END */
