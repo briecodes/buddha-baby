@@ -18,11 +18,13 @@ class Game extends Component {
     this.buddhaBaby = document.getElementById('buddha-baby');
     window.addEventListener('keydown', this.keyPressHandler);
     this.insertObstacles = window.setInterval(this.addObstacle, 1000);
+    this.insertObstacles2 = window.setInterval(this.addObstacle, 3500);
     this.positionInterval = window.setInterval(this.sendPosition, 5);
   };
 
   componentWillUnmount() {
     window.clearInterval(this.insertObstacles);
+    window.clearInterval(this.insertObstacles2);
     window.clearInterval(this.positionInterval);
   }
 
