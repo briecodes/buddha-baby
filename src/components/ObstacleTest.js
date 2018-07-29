@@ -39,7 +39,9 @@ class ObstacleTest extends Component {
       left: Math.floor(obstaclePosition.left),
       right: Math.floor(obstaclePosition.right),
       top: Math.floor(obstaclePosition.top),
-      bottom: Math.floor(obstaclePosition.bottom)
+      bottom: Math.floor(obstaclePosition.bottom),
+      height: Math.floor(obstaclePosition.height),
+      width: Math.floor(obstaclePosition.width)
     };
   };
 

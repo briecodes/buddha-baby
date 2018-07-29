@@ -52,7 +52,7 @@ class Game extends Component {
 
   getBuddhaBabyPosition = () => {
     let buddhaBabyPosition = this.buddhaBaby.getBoundingClientRect();
-    return {left: Math.floor(buddhaBabyPosition.left), top: Math.floor(buddhaBabyPosition.top), right: Math.floor(buddhaBabyPosition.right), bottom: Math.floor(buddhaBabyPosition.bottom), y: Math.floor(buddhaBabyPosition.y), x: Math.floor(buddhaBabyPosition.x)}
+    return {width: Math.floor(buddhaBabyPosition.width), height: Math.floor(buddhaBabyPosition.height), left: Math.floor(buddhaBabyPosition.left), top: Math.floor(buddhaBabyPosition.top), right: Math.floor(buddhaBabyPosition.right), bottom: Math.floor(buddhaBabyPosition.bottom), y: Math.floor(buddhaBabyPosition.y), x: Math.floor(buddhaBabyPosition.x)}
   };
 
   jump = () => {
