@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
+import FloatingObstacle from '../components/FloatingObstacle';
 import { updateBuddhaPosition } from '../actions/index';
 import anime from 'animejs'
 
@@ -25,6 +26,10 @@ class Game extends Component {
     window.clearInterval(this.positionInterval);
   }
 
+  obstaclesArray = () => {
+    return [<ObstacleTest key={UUID()} id={UUID()} removeMe={this.removeMe}/>, <FloatingObstacle key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
+  };
+
   buddhaBaby = '';
   i = 0;
 
@@ -46,7 +51,7 @@ class Game extends Component {
 
   addObstacle = () => {
     this.setState({
-      obstacles: [...this.state.obstacles, <ObstacleTest key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
+      obstacles: [...this.state.obstacles, this.obstaclesArray()[Math.floor(Math.random() * this.obstaclesArray().length)]]
     });
   };
 

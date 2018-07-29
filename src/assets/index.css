@@ -59,6 +59,14 @@ body {
   background: yellow;
 }
 
+.floating-obstacle {
+  width: 4%;
+  right: -4%;
+  bottom: 35%;
+  position: absolute;
+  background: burlywood;
+}
+
 .third {
   float: left;
   width: 20%;
