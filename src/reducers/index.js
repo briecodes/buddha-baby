@@ -14,6 +14,8 @@ const reducer = (state = initialState, action) => {
       return {...state, gameStart: action.payload};
     case 'UPDATE_BUDDHA_POSITION':
       return {...state, buddhaPosition: action.payload};
+    case 'END_GAME':
+      return {...state, gameStart: action.payload}
     default:
       return state;
   }

@@ -46,6 +46,10 @@ body {
 
 
 
+
+
+/* GAME SCREEN */
+
 #buddha-baby {
   width: 8%;
   height: 15%;
@@ -77,6 +81,19 @@ body {
   padding-bottom: 20%;
   background: cyan;
 }
+
+#end-game {
+  display: block;
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  cursor: pointer;
+}
+
+/* GAME SCREEN END */
+
+
+
 
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

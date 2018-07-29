@@ -7,6 +7,13 @@ export function startGame() {
   };
 };
 
+export function endGame() {
+  return {
+    type: 'END_GAME',
+    payload: false
+  };
+};
+
 export function updateBuddhaPosition(position) {
   return {
     type: 'UPDATE_BUDDHA_POSITION',

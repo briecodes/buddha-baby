@@ -4,7 +4,7 @@ import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
 import FloatingObstacle from '../components/FloatingObstacle';
-import { updateBuddhaPosition } from '../actions/index';
+import { updateBuddhaPosition, endGame } from '../actions/index';
 import anime from 'animejs'
 
 class Game extends Component {
@@ -85,9 +85,14 @@ class Game extends Component {
     };
   };
 
+  endGame = () => {
+    this.props.dispatch( endGame() );
+  };
+
   render() {
     return (
       <div id='game-container'>
+        <span id='end-game' onClick={this.endGame}>X</span>
         <div id='buddha-baby'></div>
         {this.state.obstacles}
       </div>
