@@ -13,6 +13,17 @@ class FloatingObstacle extends Component {
 
     anime({
       targets: this.obstacle,
+      translateY: {
+        value: '+=5',
+        duration: 500,
+        easing: 'easeInOutSine'
+      },
+      direction: 'alternate',
+      loop: true,
+    });
+
+    anime({
+      targets: this.obstacle,
       left: -(this.getObjectWidth() * 2),
       duration: 3000,
       easing: 'easeInOutCubic'

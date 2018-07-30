@@ -197,6 +197,19 @@ body {
   background-position: center;
 }
 
+#lotus-detail {
+  top: 40%;
+  left: 32%;
+  width: 37%;
+  padding-bottom: 16%;
+  position: absolute;
+  z-index: 2;
+  background-image: url(images/lotus-detail.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #dot-holder {
   position: absolute;
   z-index: 2;
@@ -211,10 +224,18 @@ body {
   display: inline-block;
   width: 5%;
   padding-bottom: 5%;
-  margin-left: 1%;
-  margin-right: 1%;
-  background: white;
+  margin-left: 2%;
+  margin-right: 2%;
   border-radius: 100%;
+}
+
+.off {
+  background: white;
+  cursor: pointer;
+}
+
+.on {
+  background: #cc216c;
 }
 
 /* START SCREEN END */
@@ -226,12 +247,15 @@ body {
 /* GAME SCREEN */
 
 #buddha-baby {
-  width: 8%;
+  width: 4.5%;
   height: 15%;
   left: 15%;
   bottom: 15%;
   position: absolute;
-  background: cyan;
+  background-image: url(images/baby-buddha-a.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .obstacle {
@@ -243,18 +267,21 @@ body {
 }
 
 .floating-obstacle {
-  width: 4%;
+  width: 4.5%;
   right: -4%;
   bottom: 35%;
   position: absolute;
-  background: burlywood;
+  position: absolute;
+  background-image: url(images/lotus.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .third {
   float: left;
   width: 20%;
   padding-bottom: 20%;
-  background: cyan;
 }
 
 #end-game {

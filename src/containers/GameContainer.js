@@ -20,6 +20,17 @@ class Game extends Component {
     this.insertObstacles = window.setInterval(this.addObstacle, 1000);
     this.insertObstacles2 = window.setInterval(this.addObstacle, 3500);
     this.positionInterval = window.setInterval(this.sendPosition, 5);
+
+    anime({
+      targets: this.buddhaBaby,
+      translateY: {
+        value: '+=5',
+        duration: 500,
+        easing: 'easeInOutSine'
+      },
+      direction: 'alternate',
+      loop: true,
+    });
   };
 
   componentWillUnmount() {
