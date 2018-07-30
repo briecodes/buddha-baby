@@ -246,7 +246,17 @@ body {
 
 /* GAME SCREEN */
 
+#game-bg {
+  z-index: 0;
+  width: 100%;
+  padding-bottom: 100%;
+  position: absolute;
+  background-image: url(images/game-bg.svg);
+  background-size: contain;
+}
+
 #buddha-baby {
+  z-index: 1;
   width: 4.5%;
   height: 15%;
   left: 15%;
@@ -259,6 +269,7 @@ body {
 }
 
 .obstacle {
+  z-index: 1;
   width: 4%;
   right: -4%;
   bottom: 15%;
@@ -267,6 +278,7 @@ body {
 }
 
 .floating-obstacle {
+  z-index: 1;
   width: 4.5%;
   right: -4%;
   bottom: 35%;

@@ -106,6 +106,7 @@ class Game extends Component {
         <span id='end-game' onClick={this.endGame}>X</span>
         <div id='buddha-baby'></div>
         {this.state.obstacles}
+        <div id='game-bg'></div>
       </div>
     );
   };
