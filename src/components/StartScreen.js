@@ -3,11 +3,27 @@ import { connect } from 'react-redux';
 
 import { startGame } from '../actions';
 import InstructionsScreen from './InstructionsScreen';
+import anime from 'animejs'
 
 class StartScreen extends React.Component {
   state = {
     displayInstructions: false
   }
+
+  componentDidMount() {
+    let buddhaBaby = document.getElementById('baby-lotus');
+
+    anime({
+      targets: buddhaBaby,
+      translateY: {
+        value: '+=5',
+        duration: 1000,
+        easing: 'easeInOutSine'
+      },
+      direction: 'alternate',
+      loop: true,
+    });
+  };
 
   renderOptions = () => {
     return (
