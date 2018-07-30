@@ -11,8 +11,11 @@ class StartScreen extends React.Component {
   renderOptions = () => {
     return (
       <React.Fragment>
-        <span className='text-button' onClick={this.start}>Start Game</span>
-        <span className='text-button' onClick={this.toggleInstructions}>Instructions</span>
+        <div id='baby-lotus'></div>
+        <div id='logo'></div>
+        <span id='start-btn' className='text-button' onClick={this.start}>Start Game</span>
+        <span id='instructions-btn' className='text-button' onClick={this.toggleInstructions}>Instructions</span>
+        <div id='mandala'></div>
       </React.Fragment>
     );
   };

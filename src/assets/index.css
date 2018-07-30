@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-size: .75em;
+  font-family: 'Open Sans Condensed', sans-serif;
+
 }
 
 #container {
@@ -32,14 +35,75 @@ body {
   overflow: hidden;
   padding-bottom: 45%;
   text-align: center;
-  background: fuchsia;
+  background-image: url(images/bg.png);
+  background-size: cover;
 }
 
 .text-button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+#start-btn, #instructions-btn {
+  z-index: 1;
+  position: absolute;
+  color: #00aeef;
+  font-weight: 700;
+}
+
+#start-btn {
+  bottom: 43.75%;
+  left: 43%;
+  /* font-size: 1.25em; */
+  font-size: 140%;
+}
+
+#instructions-btn {
+  bottom: 44%;
+  left: 33%;
+}
+
+.x {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+}
+
+#baby-lotus {
+  left: 46%;
+  top: 22%;
+  width: 29%;
+  padding-bottom: 29%;
+  position: absolute;
+  z-index: 1;
+  background-image: url(images/b-baby_lotus.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#logo {
+  left: 28%;
+  top: 16%;
+  width: 24%;
+  padding-bottom: 18%;
+  position: absolute;
+  z-index: 1;
+  background-image: url(images/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#mandala {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  z-index: 0;
+  background-image: url(images/mandala.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 /* START SCREEN END */
