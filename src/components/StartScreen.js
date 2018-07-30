@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { startGame } from '../actions';
+import InstructionsScreen from './InstructionsScreen';
 
 class StartScreen extends React.Component {
   state = {
@@ -20,15 +21,6 @@ class StartScreen extends React.Component {
     );
   };
 
-  renderInstructions = () => {
-    return (
-      <div>
-        Instructions!
-        <span className='text-button' onClick={this.toggleInstructions}>Close</span>
-      </div>
-    );
-  };
-
   start = () => {
     this.props.dispatch(startGame());
   };
@@ -42,7 +34,7 @@ class StartScreen extends React.Component {
   render() {
     return (
       <div id='start-container'>
-        {this.state.displayInstructions ? this.renderInstructions() : this.renderOptions() }
+        {this.state.displayInstructions ? <InstructionsScreen toggleInstructions={this.toggleInstructions}/> : this.renderOptions() }
       </div>
     );
   };

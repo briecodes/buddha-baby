@@ -44,8 +44,8 @@ body {
   text-transform: uppercase;
 }
 
-#start-btn, #instructions-btn {
-  z-index: 1;
+#start-btn, #instructions-btn, .x {
+  z-index: 2;
   position: absolute;
   color: #00aeef;
   font-weight: 700;
@@ -104,6 +104,43 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
+}
+
+#clouds {
+  position: absolute;
+  width: 100%;
+  padding-bottom: 100%;
+  z-index: 1;
+  background-image: url(images/cloud.svg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#instructions-logo {
+  top: 4%;
+  left: 28%;
+  width: 24%;
+  padding-bottom: 5%;
+  position: absolute;
+  z-index: 2;
+  background-image: url(images/logo.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#instructions-title {
+  top: 5.4%;
+  left: 45%;
+  width: 24%;
+  padding-bottom: 4.5%;
+  position: absolute;
+  z-index: 2;
+  background-image: url(images/instructions.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* START SCREEN END */
