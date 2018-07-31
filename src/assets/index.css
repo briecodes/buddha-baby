@@ -255,6 +255,27 @@ body {
   background-size: contain;
 }
 
+#karma-container {
+  z-index: 1;
+  top: 2%;
+  left: 2%;
+  position: absolute;
+  width: 30%;
+  text-align: left;
+}
+
+#karma-bar {
+  width: 100%;
+  overflow: hidden;
+  border: rgb(207, 207, 207) solid 1px;
+}
+
+#karma-filling {
+  width: 50%;
+  padding-bottom: 7%;
+  background: cyan;
+}
+
 #buddha-baby {
   z-index: 1;
   width: 4.5%;

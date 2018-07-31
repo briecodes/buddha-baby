@@ -4,6 +4,7 @@ const initialState = {
   buddhaHealth: 'healthy',
   enemies: [],
   gameLevel: 1,
+  karma: 50,
   gameStart: false,
   gamePause: false
 };
@@ -15,7 +16,9 @@ const reducer = (state = initialState, action) => {
     case 'UPDATE_BUDDHA_POSITION':
       return {...state, buddhaPosition: action.payload};
     case 'END_GAME':
-      return {...state, gameStart: action.payload}
+      return {...state, gameStart: action.payload};
+    case 'ADJUST_KARMA':
+      return {...state, karma: state.karma + action.payload}
     default:
       return state;
   }

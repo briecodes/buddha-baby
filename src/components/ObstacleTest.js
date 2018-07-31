@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import anime from 'animejs'
 
-import { elementFiller } from '../actions/index';
+import { elementFiller, adjustKarma } from '../actions/index';
 
 class ObstacleTest extends Component {
 
@@ -77,6 +77,13 @@ class ObstacleTest extends Component {
     if (elPos.top >= this.props.buddhaPosition.top && elPos.bottom <= this.props.buddhaPosition.bottom && elPos.left >= this.props.buddhaPosition.left && elPos.right <= this.props.buddhaPosition.right) {
       this.clearAllIntervals();
       this.obstacle.remove();
+      if (this.props.element === 'lotus'){
+        if (this.props.karma !== 100){
+          this.props.dispatch(adjustKarma(5));
+        }
+      }else{
+        this.props.dispatch(adjustKarma(-10));
+      }
     };
   };
 
@@ -91,7 +98,8 @@ class ObstacleTest extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    buddhaPosition: state.buddhaPosition
+    buddhaPosition: state.buddhaPosition,
+    karma: state.karma
   };
 };
 

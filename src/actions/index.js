@@ -15,6 +15,13 @@ export function endGame() {
   };
 };
 
+export function adjustKarma(num) {
+  return {
+    type: 'ADJUST_KARMA',
+    payload: num
+  };
+};
+
 export function updateBuddhaPosition(position) {
   return {
     type: 'UPDATE_BUDDHA_POSITION',
