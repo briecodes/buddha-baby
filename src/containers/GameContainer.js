@@ -77,13 +77,15 @@ class Game extends Component {
     anime({
       targets: this.buddhaBaby,
       translateY: {
-        value: '-=150',
+        value: `-=${this.getBuddhaBabyPosition().height * 2.5}`,
         duration: 250,
         easing: 'easeInOutSine'
       },
       direction: 'alternate',
       loop: 1,
-      complete: () => this.setState({ bind: false })
+      complete: () => {
+        this.setState({ bind: false })
+      }
     });
   };
 
