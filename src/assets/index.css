@@ -274,7 +274,10 @@ body {
   right: -4%;
   bottom: 15%;
   position: absolute;
-  background: yellow;
+  background-image: url(images/cock.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .floating-obstacle {
@@ -282,7 +285,6 @@ body {
   width: 4.5%;
   right: -4%;
   bottom: 35%;
-  position: absolute;
   position: absolute;
   background-image: url(images/lotus.svg);
   background-size: contain;

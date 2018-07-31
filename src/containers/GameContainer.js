@@ -103,7 +103,7 @@ class Game extends Component {
   render() {
     return (
       <div id='game-container'>
-        <span id='end-game' onClick={this.endGame}>X</span>
+        <span id='end-game' className='x text-button' onClick={this.endGame}>X</span>
         <div id='buddha-baby'></div>
         {this.state.obstacles}
         <div id='game-bg'></div>
