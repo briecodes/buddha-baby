@@ -313,6 +313,19 @@ body {
   padding-bottom: 20%;
 }
 
+.boid {
+  z-index: 1;
+  width: 3.5%;
+  padding-bottom: 3.5%;
+  right: 18%;
+  top: 20%;
+  position: absolute;
+  background-image: url(images/boid.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #end-game {
   display: block;
   position: absolute;

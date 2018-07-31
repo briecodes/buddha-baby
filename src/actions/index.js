@@ -1,4 +1,5 @@
 import React from 'react';
+import anime from 'animejs'
 
 export function startGame() {
   return {
@@ -19,6 +20,19 @@ export function updateBuddhaPosition(position) {
     type: 'UPDATE_BUDDHA_POSITION',
     payload: {left: position.left, top: position.top, right: position.right, bottom: position.bottom, height: position.height, width: position.width}
   };
+};
+
+export function bounce(element) {
+  anime({
+    targets: [element],
+    translateY: {
+      value: '+=5',
+      duration: 550,
+      easing: 'easeInOutSine'
+    },
+    direction: 'alternate',
+    loop: true,
+  });
 };
 
 export function elementFiller() {

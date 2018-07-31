@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
-import { updateBuddhaPosition, endGame } from '../actions/index';
+import { updateBuddhaPosition, endGame, bounce } from '../actions/index';
 import anime from 'animejs'
 
 class Game extends Component {
@@ -19,6 +19,8 @@ class Game extends Component {
     this.insertObstacles = window.setInterval(this.addObstacle, 1000);
     this.insertObstacles2 = window.setInterval(this.addObstacle, 3500);
     this.positionInterval = window.setInterval(this.sendPosition, 5);
+
+    bounce('.boid');
 
     anime({
       targets: this.buddhaBaby,
@@ -109,6 +111,7 @@ class Game extends Component {
     return (
       <div id='game-container'>
         <span id='end-game' className='x text-button' onClick={this.endGame}>X</span>
+        <div className='boid'></div>
         <div id='buddha-baby'></div>
         {this.state.obstacles}
         <div id='game-bg'></div>
