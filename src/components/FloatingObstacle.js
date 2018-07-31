@@ -14,7 +14,7 @@ class FloatingObstacle extends Component {
     anime({
       targets: this.obstacle,
       translateY: {
-        value: '+=5',
+        value: `+=${this.obstacle.getBoundingClientRect().height * .25}`,
         duration: 500,
         easing: 'easeInOutSine'
       },

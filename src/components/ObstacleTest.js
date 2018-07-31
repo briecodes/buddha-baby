@@ -13,6 +13,17 @@ class ObstacleTest extends Component {
 
     anime({
       targets: this.obstacle,
+      translateY: {
+        value: `+=${this.obstacle.getBoundingClientRect().height * .25}`,
+        duration: 500,
+        easing: 'easeInOutSine'
+      },
+      direction: 'alternate',
+      loop: true,
+    });
+
+    anime({
+      targets: this.obstacle,
       left: -(this.getObjectWidth() * 2),
       duration: 3000,
       easing: 'easeInOutCubic'
@@ -22,10 +33,6 @@ class ObstacleTest extends Component {
   componentWillUnmount() {
     this.clearAllIntervals();
   };
-
-  // randomNumber = () => {
-  //   return Math.floor(Math.random()*(3000-1000+1)+1000);
-  // };
 
   clearAllIntervals = () => {
     window.clearInterval(this.objectMotion);
@@ -73,17 +80,9 @@ class ObstacleTest extends Component {
     };
   };
 
-  // collisionDetection = () => {
-  //   if (this.getObstaclePosition().top >= this.props.buddhaPosition.top && this.getObstaclePosition().bottom <= this.props.buddhaPosition.bottom && this.getObstaclePosition().left >= this.props.buddhaPosition.left && this.getObstaclePosition().right <= this.props.buddhaPosition.right) {
-  //     // return true
-  //     this.clearAllIntervals();
-  //     this.obstacle.remove();
-  //   };
-  // };
-
   render() {
     return (
-      <div id={this.props.id.replace(/-/g, "")} className='obstacle'>
+      <div id={this.props.id.replace(/-/g, "")} className={this.props.float === 0 ? `obstacle ${this.props.element}` : `floating-obstacle ${this.props.element}`}>
         {elementFiller()}
       </div>
     );

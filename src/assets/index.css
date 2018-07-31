@@ -274,7 +274,6 @@ body {
   right: -4%;
   bottom: 15%;
   position: absolute;
-  background-image: url(images/cock.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -286,10 +285,26 @@ body {
   right: -4%;
   bottom: 35%;
   position: absolute;
-  background-image: url(images/lotus.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.pig {
+  background-image: url(images/pig.svg);
+  width: 5%;
+}
+
+.cock {
+  background-image: url(images/cock.svg);
+}
+
+.snake {
+  background-image: url(images/snake.svg);
+}
+
+.lotus {
+  background-image: url(images/lotus.svg);
 }
 
 .third {

@@ -39,8 +39,16 @@ class Game extends Component {
     window.clearInterval(this.positionInterval);
   }
 
+  binaryNum = () => {
+    return Math.floor(Math.random() * Math.floor(2));
+  };
+
+  elementsArray = () => {
+    return ['pig', 'cock', 'snake', 'lotus']
+  };
+
   obstaclesArray = () => {
-    return [<ObstacleTest key={UUID()} id={UUID()} removeMe={this.removeMe}/>, <FloatingObstacle key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
+    return [<ObstacleTest key={UUID()} id={UUID()} float={this.binaryNum()} element={this.elementsArray()[Math.floor(Math.random() * this.elementsArray().length)]} removeMe={this.removeMe}/>, <FloatingObstacle key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
   };
 
   buddhaBaby = '';
@@ -64,7 +72,7 @@ class Game extends Component {
 
   addObstacle = () => {
     this.setState({
-      obstacles: [...this.state.obstacles, this.obstaclesArray()[Math.floor(Math.random() * this.obstaclesArray().length)]]
+      obstacles: [...this.state.obstacles, <ObstacleTest key={UUID()} id={UUID()} float={this.binaryNum()} element={this.elementsArray()[Math.floor(Math.random() * this.elementsArray().length)]} removeMe={this.removeMe}/>]
     });
   };
 
