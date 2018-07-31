@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
-import FloatingObstacle from '../components/FloatingObstacle';
 import { updateBuddhaPosition, endGame } from '../actions/index';
 import anime from 'animejs'
 
@@ -45,10 +44,6 @@ class Game extends Component {
 
   elementsArray = () => {
     return ['pig', 'cock', 'snake', 'lotus']
-  };
-
-  obstaclesArray = () => {
-    return [<ObstacleTest key={UUID()} id={UUID()} float={this.binaryNum()} element={this.elementsArray()[Math.floor(Math.random() * this.elementsArray().length)]} removeMe={this.removeMe}/>, <FloatingObstacle key={UUID()} id={UUID()} removeMe={this.removeMe}/>]
   };
 
   buddhaBaby = '';
