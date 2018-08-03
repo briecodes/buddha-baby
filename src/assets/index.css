@@ -291,7 +291,7 @@ body {
 
 .obstacle {
   z-index: 1;
-  width: 4%;
+  width: 5%;
   right: -4%;
   bottom: 15%;
   position: absolute;
@@ -313,7 +313,7 @@ body {
 
 .pig {
   background-image: url(images/pig.svg);
-  width: 5%;
+  width: 5.5%;
 }
 
 .cock {
