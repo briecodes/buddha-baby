@@ -82,8 +82,14 @@ class ObstacleTest extends Component {
           this.props.dispatch(adjustKarma(5));
         }
       }else{
-        this.props.dispatch(adjustKarma(-10));
-      }
+        if (this.props.karma > 0){
+          if (this.props.karma - 10 < 0){
+            this.props.dispatch(adjustKarma(-this.props.karma));
+          }else{
+            this.props.dispatch(adjustKarma(-10));
+          };
+        };
+      };
     };
   };
 
