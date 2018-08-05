@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
-import Karma from '../components/Karma';
+import Karma2 from '../components/Karma2';
 import { updateBuddhaPosition, endGame, bounce } from '../actions/index';
 import anime from 'animejs'
 
@@ -111,7 +111,7 @@ class Game extends Component {
   render() {
     return (
       <div id='game-container'>
-        <Karma/>
+        <Karma2/>
         <span id='end-game' className='x text-button' onClick={this.endGame}>X</span>
         <div className='boid'></div>
         <div id='buddha-baby'></div>

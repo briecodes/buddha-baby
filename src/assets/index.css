@@ -264,6 +264,47 @@ body {
   text-align: left;
 }
 
+#karma-container2 {
+  z-index: 1;
+  top: 2%;
+  left: 2%;
+  position: absolute;
+  width: 15%;
+  text-align: left;
+}
+
+#background-mandala {
+  width: 100%;
+}
+
+#circle-outline {
+  width: 50%;
+  padding-bottom: 50%;
+  position: absolute;
+  overflow: hidden;
+  margin: 25%;
+  border: #fff 3px solid;
+  /* background: #dce3e2; */
+  border-radius: 100%;
+}
+
+#filler {
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 50%;
+  background: rgba(236, 0, 140, .5);
+  position: absolute;
+}
+
+#karma-lotus {
+  width: 95%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  position: absolute;
+  top: 25%;
+  z-index: 1;
+}
+
 #karma-bar {
   width: 100%;
   overflow: hidden;
