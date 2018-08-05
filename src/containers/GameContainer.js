@@ -4,41 +4,42 @@ import UUID from 'uuid';
 
 import ObstacleTest from '../components/ObstacleTest';
 import Karma2 from '../components/Karma2';
+import Baby from '../components/Baby';
 import { updateBuddhaPosition, endGame, bounce } from '../actions/index';
 import anime from 'animejs'
 
 class Game extends Component {
 
   state = {
-    obstacles: [],
-    bind: false
+    obstacles: []
+    // bind: false
   };
 
   componentDidMount() {
-    this.buddhaBaby = document.getElementById('buddha-baby');
-    window.addEventListener('keydown', this.keyPressHandler);
+    // this.buddhaBaby = document.getElementById('buddha-baby');
+    // window.addEventListener('keydown', this.keyPressHandler);
     this.insertObstacles = window.setInterval(this.addObstacle, 1000);
     this.insertObstacles2 = window.setInterval(this.addObstacle, 3500);
-    this.positionInterval = window.setInterval(this.sendPosition, 5);
+    // this.positionInterval = window.setInterval(this.sendPosition, 5);
 
     bounce('.boid');
 
-    anime({
-      targets: this.buddhaBaby,
-      translateY: {
-        value: '+=5',
-        duration: 500,
-        easing: 'easeInOutSine'
-      },
-      direction: 'alternate',
-      loop: true,
-    });
+    // anime({
+    //   targets: this.buddhaBaby,
+    //   translateY: {
+    //     value: '+=5',
+    //     duration: 500,
+    //     easing: 'easeInOutSine'
+    //   },
+    //   direction: 'alternate',
+    //   loop: true,
+    // });
   };
 
   componentWillUnmount() {
     window.clearInterval(this.insertObstacles);
     window.clearInterval(this.insertObstacles2);
-    window.clearInterval(this.positionInterval);
+    // window.clearInterval(this.positionInterval);
   }
 
   binaryNum = () => {
@@ -49,12 +50,12 @@ class Game extends Component {
     return ['pig', 'cock', 'snake', 'lotus']
   };
 
-  buddhaBaby = '';
+  // buddhaBaby = '';
   i = 0;
 
-  sendPosition = () => {
-    this.props.dispatch( updateBuddhaPosition( this.getBuddhaBabyPosition() ) );
-  };
+  // sendPosition = () => {
+  //   this.props.dispatch( updateBuddhaPosition( this.getBuddhaBabyPosition() ) );
+  // };
 
   removeMe = (id) => {
     let item = this.state.obstacles.find(ele => {
@@ -74,35 +75,35 @@ class Game extends Component {
     });
   };
 
-  getBuddhaBabyPosition = () => {
-    let buddhaBabyPosition = this.buddhaBaby.getBoundingClientRect();
-    return {width: Math.floor(buddhaBabyPosition.width), height: Math.floor(buddhaBabyPosition.height), left: Math.floor(buddhaBabyPosition.left), top: Math.floor(buddhaBabyPosition.top), right: Math.floor(buddhaBabyPosition.right), bottom: Math.floor(buddhaBabyPosition.bottom), y: Math.floor(buddhaBabyPosition.y), x: Math.floor(buddhaBabyPosition.x)}
-  };
+  // getBuddhaBabyPosition = () => {
+  //   let buddhaBabyPosition = this.buddhaBaby.getBoundingClientRect();
+  //   return {width: Math.floor(buddhaBabyPosition.width), height: Math.floor(buddhaBabyPosition.height), left: Math.floor(buddhaBabyPosition.left), top: Math.floor(buddhaBabyPosition.top), right: Math.floor(buddhaBabyPosition.right), bottom: Math.floor(buddhaBabyPosition.bottom), y: Math.floor(buddhaBabyPosition.y), x: Math.floor(buddhaBabyPosition.x)}
+  // };
 
-  jump = () => {
-    anime({
-      targets: this.buddhaBaby,
-      translateY: {
-        value: `-=${this.getBuddhaBabyPosition().height * 2.5}`,
-        duration: 250,
-        easing: 'easeInOutSine'
-      },
-      direction: 'alternate',
-      loop: 1,
-      complete: () => {
-        this.setState({ bind: false })
-      }
-    });
-  };
+  // jump = () => {
+  //   anime({
+  //     targets: this.buddhaBaby,
+  //     translateY: {
+  //       value: `-=${this.getBuddhaBabyPosition().height * 2.5}`,
+  //       duration: 250,
+  //       easing: 'easeInOutSine'
+  //     },
+  //     direction: 'alternate',
+  //     loop: 1,
+  //     complete: () => {
+  //       this.setState({ bind: false })
+  //     }
+  //   });
+  // };
 
-  keyPressHandler = (e) => {
-    if (e.keyCode === 32 && this.state.bind !== true){
-      this.setState({
-        bind: true
-      });
-      this.jump();
-    };
-  };
+  // keyPressHandler = (e) => {
+  //   if (e.keyCode === 32 && this.state.bind !== true){
+  //     this.setState({
+  //       bind: true
+  //     });
+  //     this.jump();
+  //   };
+  // };
 
   endGame = () => {
     this.props.dispatch( endGame() );
@@ -112,9 +113,10 @@ class Game extends Component {
     return (
       <div id='game-container'>
         <Karma2/>
+        <Baby/>
         <span id='end-game' className='x text-button' onClick={this.endGame}>X</span>
         <div className='boid'></div>
-        <div id='buddha-baby'></div>
+        {/* <div id='buddha-baby'></div> */}
         {this.state.obstacles}
         <div id='game-bg'></div>
       </div>
