@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import anime from 'animejs'
 
-import { updateBuddhaPosition, endGame, bounce } from '../actions/index';
+import { updateBuddhaPosition } from '../actions/index';
 
 class Baby extends Component {
 
