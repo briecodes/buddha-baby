@@ -1,5 +1,12 @@
 import React from 'react';
-import anime from 'animejs'
+import anime from 'animejs';
+
+export function location(location) {
+  return {
+    type: 'LOCATION',
+    payload: location
+  };
+};
 
 export function startGame() {
   return {
@@ -19,6 +26,12 @@ export function adjustKarma(num) {
   return {
     type: 'ADJUST_KARMA',
     payload: num
+  };
+};
+
+export function resetGame() {
+  return {
+    type: 'RESET_GAME'
   };
 };
 

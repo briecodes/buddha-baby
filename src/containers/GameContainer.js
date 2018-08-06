@@ -5,7 +5,7 @@ import UUID from 'uuid';
 import ObstacleTest from '../components/ObstacleTest';
 import Karma2 from '../components/Karma2';
 import Baby from '../components/Baby';
-import { endGame, bounce } from '../actions/index';
+import { location, bounce } from '../actions/index';
 
 class Game extends Component {
 
@@ -51,16 +51,12 @@ class Game extends Component {
     });
   };
 
-  endGame = () => {
-    this.props.dispatch( endGame() );
-  };
-
   render() {
     return (
       <div id='game-container'>
         <Karma2/>
         <Baby/>
-        <span id='end-game' className='x text-button' onClick={this.endGame}>X</span>
+        <span id='end-game' className='x text-button' onClick={() => this.props.dispatch(location('home'))}>X</span>
         <div className='boid'></div>
         {this.state.obstacles}
         <div id='game-bg'></div>

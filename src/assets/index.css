@@ -409,6 +409,41 @@ body {
   cursor: pointer;
 }
 
+#end-w, #end-l {
+  width: 50%;
+  padding-bottom: 40%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 5%;
+  z-index: 1;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#end-w {
+  background-image: url(images/end-nice-work.svg);
+}
+
+#end-l {
+  background-image: url(images/end-great-effort.svg);
+}
+
+#play-again {
+  width: 15%;
+  padding-bottom: 3.5%;
+  top: 40%;
+  left: 32%;
+  position: absolute;
+  z-index: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(images/play-again.svg);
+  cursor: pointer;
+}
+
 /* GAME SCREEN END */
 
 

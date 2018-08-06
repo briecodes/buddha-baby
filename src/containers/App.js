@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StartScreen from '../components/StartScreen';
+import InstructionsScreen from '../components/InstructionsScreen';
 import Game from './GameContainer';
+import EndScreen from '../components/EndScreen';
 
 class App extends Component {
   render() {
     return (
       <div id='container'>
         <div id='vertical-center'>
-          {this.props.gameStart ? <Game/> : <StartScreen /> }
+          {this.props.location === 'home' ? <StartScreen/> : null }
+          {this.props.location === 'game' ? <Game/> : null }
+          {this.props.location === 'instructions' ? <InstructionsScreen/> : null }
+          {this.props.location === 'end screen' ? <EndScreen/> : null }
         </div>
       </div>
     );
@@ -17,7 +22,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    gameStart: state.gameStart
+    gameStart: state.gameStart,
+    location: state.location
   };
 };
 

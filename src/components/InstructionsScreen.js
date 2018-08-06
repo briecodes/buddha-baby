@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { location } from '../actions';
+
 class InstructionsScreen extends Component {
   state = {
     sideA: true
@@ -38,12 +40,10 @@ class InstructionsScreen extends Component {
     );
   };
 
-
-
   render() {
     return (
-      <React.Fragment>
-        <span className='x text-button' onClick={this.props.toggleInstructions}>X</span>
+      <div id='start-container'>
+        <span className='x text-button' onClick={() => this.props.dispatch(location('home'))}>X</span>
         <div id='instructions-logo'></div>
         <div id='instructions-title'></div>
         <div id='instructions-copy'>
@@ -54,7 +54,7 @@ class InstructionsScreen extends Component {
 
         <div id='clouds'></div>
         <div id='mandala'></div>
-      </React.Fragment>
+      </div>
     );
   };
 };
