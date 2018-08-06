@@ -34,8 +34,8 @@ class StartScreen extends React.Component {
       <div id='start-container'>
         <div id='baby-lotus'></div>
         <div id='logo'></div>
-        <span id='start-btn' className='text-button' onClick={this.start}>Start Game</span>
-        <span id='instructions-btn' className='text-button' onClick={this.showInstructions}>Instructions</span>
+        <div id='start-btn' onClick={this.start}></div>
+        <div id='instructions-btn' onClick={this.showInstructions}></div>
         <div id='mandala'></div>
       </div>
     );

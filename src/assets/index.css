@@ -53,15 +53,27 @@ body {
 }
 
 #start-btn {
-  bottom: 43.75%;
+  bottom: 41.75%;
   left: 43%;
-  /* font-size: 1.25em; */
-  font-size: 140%;
+  width: 7%;
+  cursor: pointer;
+  padding-bottom: 3.25%;
+  background-image: url(images/start.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #instructions-btn {
-  bottom: 44%;
-  left: 33%;
+  bottom: 41.75%;
+  left: 31.5%;
+  width: 10%;
+  cursor: pointer;
+  padding-bottom: 2%;
+  background-image: url(images/instructions.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .x {
