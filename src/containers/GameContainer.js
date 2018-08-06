@@ -37,7 +37,10 @@ class Game extends Component {
     let item = this.state.obstacles.find(ele => {
       return ele.props.id === id;
     });
+    console.log('item:', item);
     let index = this.state.obstacles.indexOf(item);
+    console.log('index', index);
+    console.log('remove', this.state.obstacles.splice(index, 1));
     if (index > -1) {
       this.setState({
         obstacles: [...this.state.obstacles.splice(index, 1)]

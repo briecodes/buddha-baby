@@ -324,10 +324,21 @@ body {
   left: 15%;
   bottom: 15%;
   position: absolute;
-  background-image: url(images/baby-buddha-a.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.healthy {
+  background-image: url(images/baby-buddha-a.svg);
+}
+
+.unhealthy {
+  background-image: url(images/baby-buddha-b.svg);
+}
+
+.sick {
+  background-image: url(images/baby-buddha-c.svg);
 }
 
 .obstacle {

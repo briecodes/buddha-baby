@@ -66,10 +66,21 @@ class Baby extends Component {
       this.jump();
     };
   };
+
+  health = () => {
+    if (this.props.karma < 75 && this.props.karma > 35 ){
+      return 'unhealthy';
+    }else if (this.props.karma <= 35 ){
+      return 'sick';
+    }else {
+      return 'healthy';
+    }
+  }
   
   render() {
+    let health = this.health();
     return (
-      <div id='buddha-baby'></div>
+      <div id='buddha-baby' className={health}></div>
     );
   };
 };
