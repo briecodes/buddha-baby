@@ -83,6 +83,8 @@ class ObstacleTest extends Component {
           if (this.props.karma + 5 === 100){
             this.props.dispatch(adjustKarma(5));
             this.props.dispatch(location('end screen'));
+          }else {
+            this.props.dispatch(adjustKarma(5));
           }
         }
       }else{
