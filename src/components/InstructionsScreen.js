@@ -47,7 +47,7 @@ class InstructionsScreen extends Component {
         <div id='instructions-logo'></div>
         <div id='instructions-title'></div>
         <div id='instructions-copy'>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.
+        Use the SPACEBAR to jump and collect Lotus flowers while avoiding Piggies, Cocks, and Snakes–as cute as they may be!
         </div>
 
         {this.state.sideA ? this.renderSideA() : this.renderSideB()}
