@@ -6,6 +6,20 @@ class Karma2 extends Component {
 
   componentDidMount() {
     this.changeKarma();
+    this.rotateMandala();
+  };
+
+  rotateMandala = () => {
+    anime({
+      targets: '#background-mandala',
+      rotate: {
+        value: 360,
+        delay: 0,
+        duration: 18200,
+        easing: 'linear'
+      },
+      loop: true
+    });
   };
 
   changeKarma = () => {

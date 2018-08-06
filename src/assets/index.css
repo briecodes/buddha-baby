@@ -275,10 +275,12 @@ body {
 
 #background-mandala {
   width: 100%;
+  z-index: 0;
 }
 
 #circle-outline {
   width: 50%;
+  z-index: 1;
   padding-bottom: 50%;
   position: absolute;
   overflow: hidden;
