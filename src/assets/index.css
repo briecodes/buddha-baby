@@ -5,7 +5,7 @@ body {
   font-size: .75em;
   color: #333;
   font-family: 'Open Sans Condensed', sans-serif;
-
+  background: #d1d7d7;
 }
 
 #container {
@@ -38,6 +38,8 @@ body {
   text-align: center;
   background-image: url(images/bg.png);
   background-size: cover;
+  border: 1px #ebe9e9 solid;
+  box-shadow: 0px 0px 15px #bdc4c4;
 }
 
 .text-button {
