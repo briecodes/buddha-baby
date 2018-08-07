@@ -14,6 +14,7 @@ class App extends Component {
           {this.props.location === 'game' ? <Game/> : null }
           {this.props.location === 'instructions' ? <InstructionsScreen/> : null }
           {this.props.location === 'end screen' ? <EndScreen/> : null }
+          <div id='note'>&#123; made with love &#125;</div>
         </div>
       </div>
     );
