@@ -34,13 +34,18 @@ class Game extends Component {
   };
 
   removeMe = (id) => {
+    // console.log('removing id:', id);
+    // console.log('obstacles:', this.state.obstacles);
     let item = this.state.obstacles.find(ele => {
       return ele.props.id === id;
     });
+    // console.log('item:', item);
     let index = this.state.obstacles.indexOf(item);
+    let tempArr = [...this.state.obstacles]
+    tempArr.splice(index, 1);
     if (index > -1) {
       this.setState({
-        obstacles: [...this.state.obstacles.splice(index, 1)]
+        obstacles: [...tempArr]
       });
     };
   };

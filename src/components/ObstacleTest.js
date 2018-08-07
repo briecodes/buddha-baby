@@ -8,10 +8,10 @@ class ObstacleTest extends Component {
 
   componentDidMount() {
     this.obstacle = document.getElementById(this.props.id.replace(/-/g, ""));
-    this.objectMotion = window.setInterval(this.determineLocation, 50);
+    // this.objectMotion = window.setInterval(this.determineLocation, 50);
     this.collsionInterval = window.setInterval(this.checkSmallBoxes, 5);
 
-    anime({
+    this.bounceObstacle = anime({
       targets: this.obstacle,
       translateY: {
         value: `+=${this.obstacle.getBoundingClientRect().height * .25}`,
@@ -22,16 +22,26 @@ class ObstacleTest extends Component {
       loop: true,
     });
 
-    anime({
+    this.moveObstacle = anime({
       targets: this.obstacle,
       left: -(this.getObjectWidth() * 2),
       duration: 3000,
-      easing: 'easeInOutCubic'
+      easing: 'easeInOutCubic',
+      complete: () => {
+        this.clearAllIntervals();
+        // this.obstacle.remove();
+        this.props.removeMe(this.props.id);
+      }
     });
+
+    this.bounceObstacle.play();
+    this.moveObstacle.play();
   };
 
   componentWillUnmount() {
     this.clearAllIntervals();
+    this.bounceObstacle.pause();
+    this.moveObstacle.pause();
   };
 
   clearAllIntervals = () => {
@@ -39,6 +49,8 @@ class ObstacleTest extends Component {
     window.clearInterval(this.collsionInterval);
   }
 
+  bounceObstacle = '';
+  moveObstacle = '';
   obstacle = '';
   objectMotion = '';
 
@@ -76,7 +88,8 @@ class ObstacleTest extends Component {
     let elPos = element.getBoundingClientRect();
     if (elPos.top >= this.props.buddhaPosition.top && elPos.bottom <= this.props.buddhaPosition.bottom && elPos.left >= this.props.buddhaPosition.left && elPos.right <= this.props.buddhaPosition.right) {
       this.clearAllIntervals();
-      this.obstacle.remove();
+      this.props.removeMe(this.props.id);
+      // this.obstacle.remove();
 
       if (this.props.element === 'lotus'){
         if (this.props.karma !== 100){

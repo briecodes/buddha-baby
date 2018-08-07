@@ -28,6 +28,7 @@ class Baby extends Component {
   };
 
   componentWillUnmount() {
+    // console.log('=----------------= unmounting baby, clearing interval ----------------=');
     window.clearInterval(this.positionInterval);
   }
 

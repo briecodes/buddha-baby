@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { bounce, resetGame } from '../actions/index';
+import { resetGame } from '../actions/index';
 
 class EndScreen extends Component {
 
