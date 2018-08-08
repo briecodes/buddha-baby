@@ -4,7 +4,7 @@
 
 ## `It’s Buddha Baby!`
 
-Endless side-scroller game built with React/Redux.
+Endless side-scroller game built with React/Redux. Inspired in part by Buddhist thought and a [Dave Chappelle punchline](https://www.youtube.com/watch?v=sh7B7s3-pGs).
 
 ### `Game Instructions`
 Use the spacebar to avoid the three poisons (three unwholesome roots), represented by the pig (delusion, confusion, ignorance), cock (greed, lust, desire), and snake (anger, aversion, hate).
