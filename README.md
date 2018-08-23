@@ -9,7 +9,7 @@ Endless side-scroller game built with React/Redux. Inspired in part by Buddhist 
 ### `Game Instructions`
 Use the spacebar to avoid the three poisons (three unwholesome roots), represented by the pig (delusion, confusion, ignorance), cock (greed, lust, desire), and snake (anger, aversion, hate).
 
-Collect lotus flowers and lighten your karma on your spiritual journey and move on to the next level (coming soon).
+Collect lotus flowers and lighten your karma on your spiritual journey and move on to the next level (coming soon!).
 
 <img src='https://github.com/briecodes/buddha-baby/blob/master/readme_assets/buddha_baby-2.png?raw=true' alt='Its Buddha Baby Instructions' width='49%'> <img src='https://github.com/briecodes/buddha-baby/blob/master/readme_assets/buddhababy_screeenshot.png?raw=true' alt='Its Buddha Baby Screenshot' width='49%'/>
 
