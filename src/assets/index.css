@@ -48,7 +48,7 @@ body {
   overflow: hidden;
   padding-bottom: 45%;
   text-align: center;
-  background-image: url(images/bg.png);
+  background-image: url(./images/bg.png);
   background-size: cover;
   border: 1px #ebe9e9 solid;
   box-shadow: 0px 0px 15px #bdc4c4;
@@ -72,7 +72,7 @@ body {
   width: 7%;
   cursor: pointer;
   padding-bottom: 3.25%;
-  background-image: url(images/start.svg);
+  background-image: url(./images/start.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -84,7 +84,7 @@ body {
   width: 10%;
   cursor: pointer;
   padding-bottom: 2%;
-  background-image: url(images/instructions.svg);
+  background-image: url(./images/instructions.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -104,7 +104,7 @@ body {
   padding-bottom: 29%;
   position: absolute;
   z-index: 1;
-  background-image: url(images/b-baby_lotus.svg);
+  background-image: url(./images/b-baby_lotus.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -117,7 +117,7 @@ body {
   padding-bottom: 18%;
   position: absolute;
   z-index: 1;
-  background-image: url(images/logo.svg);
+  background-image: url(./images/logo.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -128,7 +128,7 @@ body {
   width: 100%;
   padding-bottom: 100%;
   z-index: 0;
-  background-image: url(images/mandala.png);
+  background-image: url(./images/mandala.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
@@ -139,7 +139,7 @@ body {
   width: 100%;
   padding-bottom: 100%;
   z-index: 1;
-  background-image: url(images/cloud.svg);
+  background-image: url(./images/cloud.svg);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: top;
@@ -152,7 +152,7 @@ body {
   padding-bottom: 5%;
   position: absolute;
   z-index: 2;
-  background-image: url(images/logo.svg);
+  background-image: url(./images/logo.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -165,7 +165,7 @@ body {
   padding-bottom: 4.5%;
   position: absolute;
   z-index: 2;
-  background-image: url(images/instructions.svg);
+  background-image: url(./images/instructions.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -191,7 +191,7 @@ body {
   padding-bottom: 16%;
   position: absolute;
   z-index: 2;
-  background-image: url(images/pig-detail.svg);
+  background-image: url(./images/pig-detail.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -204,7 +204,7 @@ body {
   padding-bottom: 19%;
   position: absolute;
   z-index: 2;
-  background-image: url(images/cock-detail.svg);
+  background-image: url(./images/cock-detail.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -217,7 +217,7 @@ body {
   padding-bottom: 16%;
   position: absolute;
   z-index: 2;
-  background-image: url(images/snake-detail.svg);
+  background-image: url(./images/snake-detail.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -230,7 +230,7 @@ body {
   padding-bottom: 16%;
   position: absolute;
   z-index: 2;
-  background-image: url(images/lotus-detail.svg);
+  background-image: url(./images/lotus-detail.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -277,7 +277,7 @@ body {
   width: 100%;
   padding-bottom: 100%;
   position: absolute;
-  background-image: url(images/game-bg.svg);
+  background-image: url(./images/game-bg.svg);
   background-size: contain;
 }
 
@@ -358,15 +358,15 @@ body {
 }
 
 .healthy {
-  background-image: url(images/baby-buddha-a.svg);
+  background-image: url(./images/baby-buddha-a.svg);
 }
 
 .unhealthy {
-  background-image: url(images/baby-buddha-b.svg);
+  background-image: url(./images/baby-buddha-b.svg);
 }
 
 .sick {
-  background-image: url(images/baby-buddha-c.svg);
+  background-image: url(./images/baby-buddha-c.svg);
 }
 
 .obstacle {
@@ -392,20 +392,20 @@ body {
 }
 
 .pig {
-  background-image: url(images/pig.svg);
+  background-image: url(./images/pig.svg);
   width: 5.5%;
 }
 
 .cock {
-  background-image: url(images/cock.svg);
+  background-image: url(./images/cock.svg);
 }
 
 .snake {
-  background-image: url(images/snake.svg);
+  background-image: url(./images/snake.svg);
 }
 
 .lotus {
-  background-image: url(images/lotus.svg);
+  background-image: url(./images/lotus.svg);
 }
 
 .third {
@@ -421,7 +421,7 @@ body {
   right: 18%;
   top: 20%;
   position: absolute;
-  background-image: url(images/boid.svg);
+  background-image: url(./images/boid.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -449,11 +449,11 @@ body {
 }
 
 #end-w {
-  background-image: url(images/end-nice-work.svg);
+  background-image: url(./images/end-nice-work.svg);
 }
 
 #end-l {
-  background-image: url(images/end-great-effort.svg);
+  background-image: url(./images/end-great-effort.svg);
 }
 
 #play-again {
@@ -466,7 +466,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url(images/play-again.svg);
+  background-image: url(./images/play-again.svg);
   cursor: pointer;
 }
 

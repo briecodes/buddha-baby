@@ -34,10 +34,10 @@ class Karma2 extends Component {
     return (
       <div id='karma-container2'>
         <div id='circle-outline'>
-          <object id='karma-lotus' aria-label='Karma Lotus' data='/images/lotus-karma.svg' type="image/svg+xml"></object>
+          <object id='karma-lotus' aria-label='Karma Lotus' data='./images/lotus-karma.svg' type="image/svg+xml"></object>
           <div id='filler'></div>
         </div>
-        <object id='background-mandala' aria-label='Decorative Mandala' data='/images/mandala-pattern.svg' type="image/svg+xml"></object>
+        <object id='background-mandala' aria-label='Decorative Mandala' data='./images/mandala-pattern.svg' type="image/svg+xml"></object>
       </div>
     );
   };
