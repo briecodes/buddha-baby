@@ -12,7 +12,8 @@ class Baby extends Component {
 
   componentDidMount() {
     this.buddhaBaby = document.getElementById('buddha-baby');
-    window.addEventListener('keydown', this.keyPressHandler);
+    window.addEventListener('keydown', this.keyPressHandler, false);
+    window.addEventListener('mousedown', this.keyPressHandler, false);
     this.positionInterval = window.setInterval(this.sendPosition, 5);
 
     anime({
@@ -30,6 +31,8 @@ class Baby extends Component {
   componentWillUnmount() {
     // console.log('=----------------= unmounting baby, clearing interval ----------------=');
     window.clearInterval(this.positionInterval);
+    window.removeEventListener('keydown', this.keyPressHandler, false);
+    window.removeEventListener('mousedown', this.keyPressHandler, false);
   }
 
   buddhaBaby = '';
@@ -61,11 +64,17 @@ class Baby extends Component {
 
   keyPressHandler = (e) => {
     if (e.keyCode === 32 && this.state.bind !== true){
-      this.setState({
-        bind: true
-      });
-      this.jump();
+      this.handleJump();
+    } else if (e.type === 'mousedown' && this.state.bind !== true){
+      this.handleJump();
     };
+  };
+
+  handleJump = () => {
+    this.setState({
+      bind: true
+    });
+    this.jump();
   };
 
   health = () => {

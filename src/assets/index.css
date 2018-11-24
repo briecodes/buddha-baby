@@ -358,15 +358,15 @@ body {
 }
 
 .healthy {
-  background-image: url(./images/baby-buddha-a.svg);
+  background-image: url(./images/baby-buddha-a.png);
 }
 
 .unhealthy {
-  background-image: url(./images/baby-buddha-b.svg);
+  background-image: url(./images/baby-buddha-b.png);
 }
 
 .sick {
-  background-image: url(./images/baby-buddha-c.svg);
+  background-image: url(./images/baby-buddha-c.png);
 }
 
 .obstacle {
@@ -392,20 +392,20 @@ body {
 }
 
 .pig {
-  background-image: url(./images/pig.svg);
+  background-image: url(./images/pig.png);
   width: 5.5%;
 }
 
 .cock {
-  background-image: url(./images/cock.svg);
+  background-image: url(./images/cock.png);
 }
 
 .snake {
-  background-image: url(./images/snake.svg);
+  background-image: url(./images/snake.png);
 }
 
 .lotus {
-  background-image: url(./images/lotus.svg);
+  background-image: url(./images/lotus.png);
 }
 
 .third {
